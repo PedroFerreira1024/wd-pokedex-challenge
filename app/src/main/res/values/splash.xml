@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.PokemonApp.PokemonSplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFB4A4</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/pikachu_padding</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
+    </style>
+</resources>
