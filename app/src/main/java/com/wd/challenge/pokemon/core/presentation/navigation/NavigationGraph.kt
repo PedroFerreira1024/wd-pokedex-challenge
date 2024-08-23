@@ -65,15 +65,12 @@ fun NavigationGraph(modifier: Modifier = Modifier,
         ) {
             val viewModel: PokemonDetailViewModel = hiltViewModel()
             val uiState = viewModel.uiState
-            val getPokemonDetail = viewModel::getPokemonDetail
 
             PokemonDetailScreen(
-                name = it.arguments?.getString(Constants.POKEMON_DETAIL_ARG_KEY),
                 uiState = uiState,
                 backPressNavigation = {
                     navController.popBackStack()
-                },
-                getPokemonDetail = getPokemonDetail
+                }
             )
         }
     }

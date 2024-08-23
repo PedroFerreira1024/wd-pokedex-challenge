@@ -12,17 +12,9 @@ import com.wd.challenge.pokemon.pokemon_detail.presentation.state.PokemonDetailS
 
 @Composable
 fun PokemonDetailScreen (
-    name: String?,
     uiState: PokemonDetailState,
-    getPokemonDetail: (PokemonDetailEvent.GetPokemonDetail) -> Unit,
     backPressNavigation: () -> Unit,
 ){
-
-    LaunchedEffect(true) {
-        if (name != null) {
-            getPokemonDetail(PokemonDetailEvent.GetPokemonDetail(pokemonName = name))
-        }
-    }
 
     Scaffold(
         topBar = {
@@ -37,7 +29,6 @@ fun PokemonDetailScreen (
                 modifier = Modifier.padding(paddingValues),
                 pokemonDetails = uiState.pokemonDetails,
                 isLoading = uiState.isLoading,
-                isError = uiState.error
                 )
         }
     )

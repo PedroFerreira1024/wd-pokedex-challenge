@@ -20,13 +20,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.wd.challenge.pokemon.R
 import com.wd.challenge.pokemon.core.domain.model.PokemonDetails
+import com.wd.challenge.pokemon.core.presentation.components.LoadingView
 
 @Composable
 fun PokemonDetailContent(
     modifier: Modifier = Modifier,
     pokemonDetails: PokemonDetails?,
-    isLoading: Boolean,
-    isError: String
+    isLoading: Boolean
 ) {
 
     Box(
@@ -34,68 +34,87 @@ fun PokemonDetailContent(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        Column(verticalArrangement = Arrangement.SpaceBetween) {
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = modifier
-                    .height(270.dp)
-                    .fillMaxWidth()
-                    .padding(2.dp)
-            ) {
-                PokemonDetailBackdropImage(
-                    artworkImageUrl = pokemonDetails?.artwork ?: "",
-                    modifier = Modifier
-                        .background(
-                            MaterialTheme.colorScheme.surface
-                        )
-                        .fillMaxWidth(0.55f)
-                        .padding(2.dp)
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                PokemonDetailBaseValues(
-                    modifier = Modifier
-                        .padding(horizontal = 12.dp, vertical = 4.dp),
-                    name = pokemonDetails?.name ?: "",
-                    order = pokemonDetails?.order ?: 0,
-                    height = pokemonDetails?.height ?: 0,
-                    weight = pokemonDetails?.weight ?: 0
-                )
+        if (isLoading) {
+            Box(modifier = modifier.fillMaxSize()) {
+                LoadingView(modifier.align(Alignment.Center))
             }
+        } else {
+            Column(verticalArrangement = Arrangement.SpaceBetween) {
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 6.dp)
-            ) {
-                Text(
-                    text = stringResource(id = R.string.stats),
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.align(Alignment.Center)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = modifier
+                        .height(270.dp)
+                        .fillMaxWidth()
+                        .padding(6.dp)
+                ) {
+                    PokemonDetailBackdropImage(
+                        artworkImageUrl = pokemonDetails?.artwork ?: "",
+                        modifier = Modifier
+                            .background(
+                                MaterialTheme.colorScheme.surface
+                            )
+                            .fillMaxWidth(0.55f)
+                            .padding(2.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    PokemonDetailBaseValues(
+                        modifier = Modifier
+                            .padding(horizontal = 12.dp, vertical = 4.dp),
+                        name = pokemonDetails?.name ?: "",
+                        order = pokemonDetails?.order ?: 0,
+                        height = pokemonDetails?.height ?: 0,
+                        weight = pokemonDetails?.weight ?: 0
+                    )
+                }
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 6.dp)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.stats),
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.align(Alignment.Center)
+                    )
+                    Spacer(
+                        modifier
+                            .height(1.dp)
+                            .fillMaxWidth()
+                            .background(MaterialTheme.colorScheme.onSurface)
+                    )
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+                PokemonDetailStats(
+                    modifier = Modifier.height(70.dp),
+                    stats = pokemonDetails?.stats ?: emptyList()
+                )
+                Spacer(modifier = Modifier.height(18.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 6.dp)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.types),
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.align(Alignment.Center)
+                    )
+                    Spacer(
+                        modifier
+                            .height(1.dp)
+                            .fillMaxWidth()
+                            .background(MaterialTheme.colorScheme.onSurface)
+                    )
+                }
+                Spacer(modifier = Modifier.height(16.dp))
+                PokemonDetailTypes(
+                    modifier = Modifier.height(80.dp),
+                    types = pokemonDetails?.types ?: emptyList()
                 )
             }
-            Spacer(modifier = Modifier.height(12.dp))
-            PokemonDetailStats(
-                modifier = Modifier.height(70.dp),
-                stats = pokemonDetails?.stats ?: emptyList()
-            )
-            Spacer(modifier = Modifier.height(18.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 6.dp)
-            ) {
-                Text(
-                    text = stringResource(id = R.string.types),
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            }
-            Spacer(modifier = Modifier.height(12.dp))
-            PokemonDetailTypes(
-                modifier = Modifier.height(80.dp),
-                types = pokemonDetails?.types ?: emptyList()
-            )
         }
     }
 }
