@@ -69,7 +69,7 @@ fun PokemonItem (
                 AsyncImageUrl(
                     modifier = Modifier
                         .background(
-                            color = MaterialTheme.colorScheme.surface
+                            color = MaterialTheme.colorScheme.inverseOnSurface
                         )
                         .size(80.dp)
                         .align(Alignment.Center)
