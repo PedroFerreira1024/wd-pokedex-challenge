@@ -1,7 +1,5 @@
 package com.wd.challenge.pokemon.core.domain.model
 
-import com.wd.challenge.pokemon.core.data.model.Stat
-import com.wd.challenge.pokemon.core.data.model.Type
 
 
 class PokemonDetailFactory {

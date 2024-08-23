@@ -1,6 +1,5 @@
 package com.wd.challenge.pokemon.core.paging
 
-import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.any

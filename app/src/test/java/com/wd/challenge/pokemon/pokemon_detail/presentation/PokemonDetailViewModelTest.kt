@@ -11,7 +11,6 @@ import com.wd.challenge.pokemon.core.domain.model.PokemonDetailFactory
 import com.wd.challenge.pokemon.core.domain.model.PokemonFactory
 import com.wd.challenge.pokemon.core.util.Constants
 import com.wd.challenge.pokemon.core.util.ResultData
-import com.wd.challenge.pokemon.core.util.UtilFunctions
 import com.wd.challenge.pokemon.pokemon_detail.domain.usecase.PokemonDetailUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
