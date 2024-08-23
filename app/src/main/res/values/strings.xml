@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Pokemon Dex</string>
+
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="details">Details</string>
+
+    <string name="error">Error</string>
+    <string name="error_msg">Oops! probably a Pidgey stepped on the wire. No connection</string>
+    <string name="retry">Retry</string>
+    <string name="empty_msg">Nothing found, are you missing something?</string>
+
+    <string name="search_hint">Search Pokemon by name or id</string>
+
+    <string name="stats">Stats</string>
+    <string name="name">Name</string>
+    <string name="number">No</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="types">Type(s)</string>
+</resources>
