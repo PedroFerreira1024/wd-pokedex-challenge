@@ -36,3 +36,10 @@ pretty much like core each feature is basically divided in 4 modules:
 - presentation: Ui layer free of all business logic, to be as clean as possible using viewmodel as a bridge between it and all logic and data.
 
 Again separating responsibilities of each layer within a feature was a goal in the project for easier maintenance.
+
+
+
+For tests were used:
+- JUnit: Common Unit Testing assertions
+- Mockito: mocking library
+- Truth: a Google library used for assertion with better readability
