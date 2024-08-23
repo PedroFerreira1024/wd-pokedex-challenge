@@ -43,3 +43,15 @@ For tests were used:
 - JUnit: Common Unit Testing assertions
 - Mockito: mocking library
 - Truth: a Google library used for assertion with better readability
+
+## Other Libraries
+- Retrofit: As per standart for Network requests
+- Hilt: for Dependency Injection
+- Coil: to deal with images within the App
+- A miscelaneous selection of Androidx and Kotlinx for the most typical usage like: 
+ - Compose 
+ - Material3 
+ - Navigation 
+ - Paging
+ - Couroutines 
+ - SplashScreen
