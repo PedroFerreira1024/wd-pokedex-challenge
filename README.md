@@ -48,6 +48,7 @@ For tests were used:
 - Retrofit: As per standart for Network requests
 - Hilt: for Dependency Injection
 - Coil: to deal with images within the App
+- Timber: for better logging
 - A miscelaneous selection of Androidx and Kotlinx for the most typical usage like: 
  - Compose 
  - Material3 
@@ -55,3 +56,7 @@ For tests were used:
  - Paging
  - Couroutines 
  - SplashScreen
+
+## Unit Tests
+
+Some unit Tests where provided to serve as example of tests that could be done, of course more extensive tests would be ideal.
